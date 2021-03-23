@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://.../soap/envelope/">
+ <soap:Header xmlns:wsse="http://.../secext">
+  <wsse:Security>
+   <saml:Assertion
+     xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion"
+     AssertionID="oracle-1056130475340"
+     Id="oracle-1056130475340"
+     IssueInstant="2003-06-20T17:34:35Z"
+     Issuer="CN=Sample User,...........,C=IE"
+     MajorVersion="1"
+     MinorVersion="0">
+    <saml:Conditions
+      NotBefore="2003-06-20T16:20:10Z"
+      NotOnOrAfter="2003-06-20T18:20:10Z"/>
+    <saml:AuthorizationDecisionStatement
+      Decision="Permit"
+      Resource="http://www.oracle.com/service">
+     <saml:Subject>
+      <saml:NameIdentifier
+        Format="urn:oasis:names:tc:SAML:1.0:assertion#X509SubjectName">
+         sample
+      </saml:NameIdentifier>
+     </saml:Subject>
+    </saml:AuthorizationDecisionStatement>
+    <dsig:Signature xmlns:dsig="http://.../xmldsig#" id="Sample User">
+      <!-- XML SIGNATURE INSIDE ASSERTION -->
+    </dsig:Signature>
+   </saml:Assertion>
+  </wsse:Security>
+ </soap:Header>
+ <soap:Body>
+  <ns1:getTime xmlns:ns1="urn:timeservice">
+  </ns1:getTime>
+ </soap:Body>
+</soap:Envelope>

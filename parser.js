@@ -9,9 +9,9 @@ const fs = require('fs');
 
 var doc = new DOMParser().parseFromString(fs.readFileSync('./soapEnvelope.xml').toString());
 
-var saml = XPath.useNamespaces({'saml': 'urn:oasis:names:tc:SAML:2.0:assertion'});
+var saml = XPath.useNamespaces({'saml': 'urn:oasis:names:tc:SAML:1.0:assertion'});
 var node4XML =  saml('//saml:Subject', doc)[0];
-var node = saml('//saml:Subject/saml:NameID/text()', doc)[0].nodeValue;
+var node = saml('//saml:Subject/saml:NameIdentifier/text()', doc)[0].nodeValue;
 node4XML.setAttribute('test', 'TestAttributeFromNJS');
 
 

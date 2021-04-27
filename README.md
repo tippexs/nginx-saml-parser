@@ -3,9 +3,9 @@
 This is a working demo on how to parse and manipulate XML-messages (e.g. SAML-Headers) with njs.
 
 ## 1. Build npm modules for njs
-To build the libraries for njs simply build the Docker-Container and download the files or use them in another NGINX-Container with Docker multistage-build.
+To build the libraries for njs simply build the Docker-Container and download the files or use them in another NGINX-Container with Docker multistage-build. The `build.sh` Script will help in this case.
 
-`docker build -t nginx:samllibs .`
+`./build.sh` to build the libraries. They will be available in the build-folder.
 
 Do build the libraries on the current system issue the following commands:
 Learn more about how to use node-modules with njs (http://nginx.org/en/docs/njs/node_modules.html)
